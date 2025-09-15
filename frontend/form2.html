@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #1b272a;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      min-height: 100vh;
+      background: #b5b19c;
+      padding: 20px;
+    }
+
+    .left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .form-container {
+      background: #d579b5;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: grid;
+      gap: 20px;
+      align-content: start;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .gender,
+    .hobbies {
+      display: flex;
+      gap: 10px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .buttons button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .buttons .reset {
+      background: #ccc;
+    }
+
+    .buttons .submit {
+      background: #4f22f2;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .buttons .submit:hover {
+      background: #501034;
+      transform: scale(1.05);
+    }
+
+    /* Responsive: form stacks below image */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left side image -->
+    <div class="left">
+      <img src="https://images.pexels.com/photos/1181681/pexels-photo-1181681.jpeg" alt="Form illustration">
+    </div>
+
+    <!-- Form -->
+    <div class="form-container">
+      <h2>STUDENT REGISTRATION FORM</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Name :</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Gender :</label>
+          <div class="gender">
+            <input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female"> <label for="female">Female</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Hobbies :</label>
+          <div class="hobbies">
+            <input type="checkbox" id="reading" name="hobby" value="reading"> <label for="reading">Reading</label>
+            <input type="checkbox" id="sports" name="hobby" value="sports"> <label for="sports">Sports</label>
+            <input type="checkbox" id="music" name="hobby" value="music"> <label for="music">Music</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password :</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <div class="buttons">
+          <button type="reset" class="reset">Reset All</button>
+          <button type="submit" class="submit">Submit Form</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

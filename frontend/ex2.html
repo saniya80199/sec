@@ -1,0 +1,15 @@
+<input type="text" id="myInput" value="Hello" />
+<button onclick="readInput()">Get Input</button>
+
+<script>
+  function readInput() {
+    // Select the input element by its id
+    const inputElement = document.getElementById('myInput').value;
+    
+    // Read the value property
+    //const inputValue = inputElement.value;
+    
+    // Show the value
+    alert('Input value is: ' + inputElement);
+  }
+</script>

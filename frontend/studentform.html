@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <style>
+    body {
+       font-family: Arial, sans-serif; 
+      background: #b17593;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: #adca18;
+      padding: 25px;
+      border-radius: 22px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      max-width: 500px;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #444;
+      padding-top: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+    }
+
+    .gender, .hobbies {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      grid-column: span 2;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background: #007bff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #b3008f;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Student Registration Form</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label>Gender:</label>
+      <div class="gender">
+        <input type="radio" name="gender" > Male
+        <input type="radio" name="gender" value="female"> Female
+      </div>
+
+      <label>Hobbies:</label>
+      <div class="hobbies">
+        <input type="checkbox" value="reading"> Reading
+        <input type="checkbox" value="sports"> Sports
+        <input type="checkbox" value="music"> Music
+      </div>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" placeholder="Enter password" required>
+
+      <div class="btn">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

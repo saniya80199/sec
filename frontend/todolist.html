@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO DO LIST</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f9fa;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #9412a0;
+
+        }
+        #list {
+            list-style: none;
+            padding: 0;
+            width: 300px;
+            max-width: 100%;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background: rgb(238, 235, 235);
+        }
+        #list li {
+            padding: 12px 20px;
+            border-bottom: 5px solid #f5eeee;
+            font-size: 16px;
+            cursor: default;
+            transition: background 0.3s;
+        }
+        #list li:last-child {
+            border-bottom: none;
+        }
+
+        #list li:hover {
+            background-color: #f0f0f0;
+        }
+
+        #button {
+            padding: 12px 25px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            user-select: none;
+        }
+        .done{
+            background-color: #28a745;
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            user-select: none;
+            transition: background-color 0.3s;
+        }
+        .done:hover {
+            background-color: #1e7e34;
+        }
+        #myInput {
+            width: 300px;
+            max-width: 100%;
+            padding: 12px 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+            box-sizing: border-box;
+            margin-bottom: 12px;
+            transition: border-color 0.3s;
+        }
+        #done{
+            background-color: #28a745;
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            user-select: none;
+            transition: background-color 0.3s;
+        }
+        #done:hover {
+            background-color: #1e7e34;
+        }
+        .delete{
+            background-color: #ed4e4c;
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            user-select: none;
+            transition: background-color 0.3s;
+        }
+        .delete:hover {
+            background-color: #5237eb;
+        }
+
+
+        #myInput:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 5px rgba(0,123,255,0.5);
+        }
+
+        #button:hover {
+        
+            background-color: #0f178e;
+        }
+    </style>
+</head>
+<body>
+    <h1> TODO LIST </h1>
+    <ul id="taskList">
+    <li>task1 <button class="done">complete</button><button class="delete">delete</button></li>
+    <li>task2 <button class="done">Complete</button><button class="delete">delete</button></li>
+    
+    </ul>
+    <input type="text" id="taskInput"  placeholder="enter list of tasks">
+    <button id="addtask">Add task</button>
+</body>
+</html>
+    
+<script>
+    $(document).ready(function(){
+        $("#addtask").click(function(){
+            let task=$("#taskInput").val();
+            if(task !== ""){
+                 $("#taskList").append(
+                    `<li>${task}
+                    <button id='done'>Complete</button>
+                    <button class='delete'>Delete</button>
+                    </li>`
+                 );
+            }
+        });
+            
+
+        // Mark as complete
+        $("#taskList").on("click", "#done", function(){
+                $(this).parent().css("background-color","yellow");
+        });
+
+        // Delete
+         $("#taskList").on("click", ".delete", function(){
+            $(this).parent().remove();
+        });
+
+    });
+</script>
+
+
+    

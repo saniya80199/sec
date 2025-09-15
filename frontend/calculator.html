@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f6fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 300px;
+      width: 100%;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      background-color: #6c5ce7;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #4834d4;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #2d3436;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator">
+    <h2>Simple Calculator</h2>
+
+    <input id="num1" type="number" placeholder="Enter Number 1">
+    <input id="num2" type="number" placeholder="Enter Number 2">
+
+    <div>
+      <button onclick="calculate('+')">+</button>
+      <button onclick="calculate('-')">−</button>
+      <button onclick="calculate('*')">×</button>
+      <button onclick="calculate('/')">÷</button>
+    </div>
+
+    <h3 id="result"></h3>
+  </div>
+
+  <script>
+    function calculate(op) {
+      const a = parseFloat(document.getElementById('num1').value);
+      const b = parseFloat(document.getElementById('num2').value);
+      const resultEl = document.getElementById('result');
+
+      if (isNaN(a) || isNaN(b)) {
+        resultEl.textContent = 'Enter valid numbers!';
+        return;
+      }
+
+      let res;
+      switch (op) {
+        case '+': res = a + b; break;
+        case '-': res = a - b; break;
+        case '*': res = a * b; break;
+        case '/':
+          if (b === 0) {
+            resultEl.textContent = 'Cannot divide by zero!';
+            return;
+          }
+          res = a / b;
+          break;
+      }
+
+      resultEl.textContent = 'Result: ' + res;
+    }
+  </script>
+
+</body>
+</html>
